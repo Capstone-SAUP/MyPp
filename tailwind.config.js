@@ -6,11 +6,12 @@ module.exports = {
     extend: {
       colors:{
         blue: "#2CBC39",
-        red: "DC4492",
+        red: "#DC4492",
+        darkerred: "#800000",
         yellow: "#FDCC49",
         grey: "#ededed",
         "deep-red": "#0e0000",
-        "dark-grey": "757575",
+        "dark-grey": "#5A5A5A",
         "opaque-black": "rgba(0,0,0,0.35)"
       },
       backgroundImage: (theme) => ({

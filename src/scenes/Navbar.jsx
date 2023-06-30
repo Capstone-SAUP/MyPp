@@ -34,7 +34,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setselectedPage }) => {
           src={logo}
           alt="Logo"
         />
-        <img className="h-16 w-16 " src={glitch} alt="Logo" />
+        <img className="h-[65px] w-[65px] " src={glitch} alt="Logo" />
 
         {/* DESKTOP NAV */}
         {isAboveSmallScreens ? (

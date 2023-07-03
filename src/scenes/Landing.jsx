@@ -5,6 +5,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import profile from "../assets/zooo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+
 const Landing = ({ setSelectedPage }) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 

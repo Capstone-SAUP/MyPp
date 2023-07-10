@@ -1,6 +1,37 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
 
+const container = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
+const projectVariant = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1 },
+};
+
+const Project = ({ title }) => {
+  const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition-500
+    bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-red`;
+  const projectTitle = title.split(" ").join("-").toLowerCase();
+
+  return (
+    <motion.div variants={projectVariant} className="relative">
+      <div className={overlayStyles}>
+        <p className="text-2xl font-playfair">{title}</p>
+        <p className="mt-17">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus
+          labore, sint recusandae tempore delectus, veritatis eligendi modi et
+          nulla dicta porro aspernatur a commodi ipsum neque laudantium ipsam
+          iure qui.
+        </p>
+      </div>
+    </motion.div>
+  );
+};
 const Projects = () => {
   return (
     <section id="projects" className="pt-48 pb-48">
@@ -17,19 +48,35 @@ const Projects = () => {
         }}
       >
         <div>
-        <p className="font-playfair font-semibold text-4xl mb-5">
-        <span className="text-red">PRO</span>JECTS
-        </p>
+          <p className="font-playfair font-semibold text-4xl mb-5">
+            <span className="text-red">PRO</span>JECTS
+          </p>
         </div>
         <div className="flex justify-center mt-5">
-        <LineGradient width="w-1/3" />
+          <LineGradient width="w-1/3" />
         </div>
         <p className="mt-10 mb-10">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. In eveniet
           placeat error voluptatem harum, obcaecati delectus, dolor amet
           exercitationem tempore officiis quam suscipit quis quod sed! Doloribus
-          possimus officiis nulla? 
+          possimus officiis nulla?
         </p>
+      </motion.div>
+      {/* PROJECTS */}
+      <motion.div
+        className="sm:grid sm:grid-cols-3"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        variants={container}
+      >
+        <div
+          className="flex justify-center text-center items-center p-10 bg-red
+            max-w-[400px] max-h-[400px] text-2x; font-playfair font-semibold"
+        >
+          FRESH USER INTERFACES
+        </div>
       </motion.div>
     </section>
   );

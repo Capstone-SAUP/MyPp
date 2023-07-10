@@ -3,6 +3,7 @@ import DotGroup from "./scenes/DotGroup";
 import Landing from "./scenes/Landing";
 import useMediaQuery from "./hooks/useMediaQuery";
 import Navbar from "./scenes/Navbar";
+import MySkills from "./scenes/MySkills"
 import LineGradient from "./components/LineGradient";
 
 function App() {
@@ -35,6 +36,10 @@ function App() {
             />
         )}
         {<Landing setSelectedPage={setSelectedPage} />}
+      </div>
+      <LineGradient/>
+      <div className="w-5/6 mx-auto md:h-full">
+        <MySkills/>
       </div>
     </div>
   );

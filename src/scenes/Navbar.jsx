@@ -63,7 +63,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setselectedPage }) => {
         ) : (
           <button
             className="rounded-full bg-red p-2"
-            onclick={() => setIsMenuToggled(!isMenuToggled)}
+            onClick={() => setIsMenuToggled(!isMenuToggled)}
           >
             <FontAwesomeIcon icon={faBars} />
           </button>

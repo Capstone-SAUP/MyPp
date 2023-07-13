@@ -2,7 +2,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import SocialMediaIcons from "../components/SocialMediaIcons";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import profile from "../assets/zooo.png";
+import profile from "../assets/DP.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -20,13 +20,13 @@ const Landing = ({ setSelectedPage }) => {
         {isAboveMediumScreens ? (
           <div
             className="relative z-0 ml-20 before:absolute before:-top-20 before:-left-20 
-                        before:rounded-t-[400px] before:w-full before:max-w-[400px] before:h-full
+                        before:w-full before:max-w-[400px] before:h-full
                         before:border-2 before:border-red before:z-[-1]"
           >
             <img
               alt="profile"
               className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full
-                     max-w-[400px] md:max-w-[600px]"
+                     max-w-[350px] md:max-w-[400px]"
               src={profile}
             />
           </div>
@@ -34,8 +34,8 @@ const Landing = ({ setSelectedPage }) => {
           <img
             alt="profile"
             className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full
-                     max-w-[400px] md:max-w-[600px]"
-            src="../assets/zooo.png"
+                     max-w-[350px] md:max-w-[400px]"
+            src={profile}
           />
         )}
       </div>
@@ -53,8 +53,8 @@ const Landing = ({ setSelectedPage }) => {
           }}
         >
           <p className="text-6xl font-playfair z-10 text-center md:text-start">
-            James Homer {""}
-            <span>Pineda</span>
+            Aenon Jorish {""}
+            <span>Santiago</span>
           </p>
           <p className="mt-10 mb-7 text-sm text-center md:text-start">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur

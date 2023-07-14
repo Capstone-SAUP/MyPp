@@ -1,0 +1,9 @@
+.swiper {
+    width: 600px;
+    height: 300px;
+}
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}

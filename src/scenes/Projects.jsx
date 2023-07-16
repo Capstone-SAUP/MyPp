@@ -1,35 +1,20 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import Swiper from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import project1 from "../assets/project-1.jpeg";
 import project2 from "../assets/project-2.jpeg";
 import project3 from "../assets/project-3.jpeg";
 import project4 from "../assets/project-4.jpeg";
-
-<link rel="stylesheet" href="styles.css"/>
-
-functiondisable() {
-  document.body.classList.add("stop-scrolling");
-}
-
-var swiper = new Swiper(".portfolio_container", {
-  spaceBetween: 30,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
+import MediaCard from "../cards/projectsaup";
 
 const Projects = () => {
   return (
     <section id="projects" className="pt-48 pb-48">
       {/* HEADINGS */}
       <motion.div
-        className="md:w-2/4 mx-auto text-center"
+        className="md:w-full mx-auto text-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -53,68 +38,61 @@ const Projects = () => {
           exercitationem tempore officiis quam suscipit quis quod sed! Doloribus
           possimus officiis nulla?
         </p>
-      </motion.div>
-      {/* PROJECTS */}
-      
-      <motion.div
-        className="sm:grid sm:grid-cols-2"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.5 }}
-      >
 
+        {/* PROJECTS */}
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={3}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <div class="swiper">
+            <div class="portfolio_container container swiper-container">
+              <div class="swiper-wrapper">
+                <SwiperSlide>
+                <MediaCard/>
+                </SwiperSlide>
 
-
-<section className="justify-center items-center text-center" class="portfolio section" id="portfolio">
-  
-              {/*SWIPER JS */}
-              <div class="swiper">
-                <div class="portfolio_container container swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="portfolio_content grid swiper-slide">
-                            <img src={project1} alt="" class="portfolio_img"/> 
-
-                            <div class="portfolio_data">
-                                <h3 class="portfolio_title">HAU Website Redesign</h3>
-                                <p class="portfolio_description">A concept of how Holy Angel University website would look 
-                                    like under revision.</p>  
-                            </div>
-                        </div>
-
-                        <div class="portfolio_content grid swiper-slide">
-                            <img src={project2} alt="" class="portfolio_img"/> 
-
-                            <div class="portfolio_data">
-                                <h3 class="portfolio_title">Project Database</h3>
-                                <p class="portfolio_description">A project used for searching, deleting, creating and editing books in HAU Library.
-                                </p>  
-                            </div>
-                        </div>
-
-                        <div class="portfolio_content grid swiper-slide">
-                            <img src={project3} alt="" class="portfolio_img"/> 
-
-                            <div class="portfolio_data">
-                                <h3 class="portfolio_title">LDM Pharmacy</h3>
-                                <p class="portfolio_description">Prototype website used for buying medicines online, a community drugstore.
-                                </p>  
-                            </div>
-                        </div>
-
-                        <div class="portfolio_content grid swiper-slide">
-                            <img src={project4} alt="" class="portfolio_img"/> 
-
-                            <div class="portfolio_data">
-                                <h3 class="portfolio_title">C.E.A</h3>
-                                <p class="portfolio_description">Online shopping clothing store that we developed as a final requirement for a subject.
-                                </p>  
-                            </div>
-                        </div>
+                <SwiperSlide>
+                  <div className="relative inline-block">
+                    <img src={project2} alt=""/>
+                    <div className="absolute inset-0 z-10 bg-deep-red text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300">
+                      <span className="text-white text-lg font-bold">Tite</span>
                     </div>
-                </div>
-                </div>
-            </section>   
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div class="portfolio_content grid swiper-slide">
+                    <img src={project3} alt="" class="portfolio_img" />
+
+                    <div class="portfolio_data">
+                      <h3 class="portfolio_title">LDM Pharmacy</h3>
+                      <p class="portfolio_description">
+                        Prototype website used for buying medicines online, a
+                        community drugstore.
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <div class="portfolio_content grid swiper-slide">
+                    <img src={project4} alt="" class="portfolio_img" />
+
+                    <div class="portfolio_data">
+                      <h3 class="portfolio_title">C.E.A</h3>
+                      <p class="portfolio_description">
+                        Online shopping clothing store that we developed as a
+                        final requirement for a subject.
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              </div>
+            </div>
+          </div>
+        </Swiper>
       </motion.div>
     </section>
   );
